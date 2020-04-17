@@ -1,0 +1,21 @@
+{
+  "name": "davidlopez.dev",
+  "version": "1.0.0",
+  "private": true,
+  "description": "My personal website. Made with NodeJS.",
+  "main": "start.js",
+  "scripts": {
+    "start": "nodemon ./start.js --ignore public/",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "David Lopez",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "pug": "2.0.4",
+    "showdown": "1.9.1"
+  },
+  "devDependencies": {
+    "nodemon": "2.0.3"
+  }
+}
