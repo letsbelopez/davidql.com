@@ -1,6 +1,5 @@
 const express = require('express');
 const path = require('path');
-const readline = require('readline');
 const fs = require('fs');
 
 const router = express.Router();
@@ -31,6 +30,7 @@ function getContentData(basePath, files, result = []) {
       result.push(route);
     }
   }
+  // Note don't include async functions above or this will return early
   return result;
 }
 
@@ -49,7 +49,7 @@ function getLines(path) {
 
 // Home page route
 router.get(`/`, function (req, res) {
-  res.sendFile(path.join(__dirname, '../index.html'));
+  res.render('index');
 });
 
 module.exports = router;
