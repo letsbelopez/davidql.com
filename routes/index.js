@@ -11,12 +11,15 @@ fs.readdir(path.join(__dirname, '../content'), async (err, files) => {
   createRoutes(data);
 });
 
-function getContentData(basePath, files, result = []) {
-  for (let i = 0; i < files.length; i++) {
+function getContentData(basePath, files, result = [], directory) {
+  for (let i = 0; i < files.length; ++i) {
     const current = files[i];
     let newbase = path.join(basePath, current);
+
     if (fs.statSync(newbase).isDirectory()) {
-      getContentData(newbase, fs.readdirSync(newbase), result);
+      let index = newbase.lastIndexOf('/');
+      const currentDir = newbase.slice(++index);
+      getContentData(newbase, fs.readdirSync(newbase), result, currentDir);
     } else {
       const lines = getLines(newbase);
       const title = lines[0];
@@ -26,6 +29,7 @@ function getContentData(basePath, files, result = []) {
         slug: current.slice(11),
         title,
         body,
+        directory,
       };
       result.push(route);
     }
@@ -37,7 +41,7 @@ function getContentData(basePath, files, result = []) {
 function createRoutes(data) {
   data.forEach((d) => {
     router.get(`/${d.slug}`, function (req, res) {
-      res.render('blog', { date: d.date, title: d.title, body: d.body });
+      res.render(d.directory, { date: d.date, title: d.title, body: d.body });
     });
   });
 }
