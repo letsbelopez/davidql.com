@@ -1,0 +1,9 @@
+<h2>SynctUp Mobile App</h2>
+<p>
+  SynctUp is a cross platform mobile app for iOS and Android. It was built with Ionic Capacitor, Angular, NodeJS, and MongoDB. SynctUp was created to allow people to share a virtual business card. Unlike a physical card, your contact information will always stay up to date. For example, if you change your phone number, anyone who you shared it with previously will automatically get the new one. Say goodbye to "new number, who dis"?
+</p>
+<ul>
+  <li>Client: SynctUp</li>
+  <li>Role: Mobile Developer</li>
+  <li>Download on <a href="https://apps.apple.com/us/app/synctup/id1333538829?ls=1">iOS</a> or <a href="https://play.google.com/store/apps/details?id=com.synctup.synctup">Android</a></li>
+</ul>
