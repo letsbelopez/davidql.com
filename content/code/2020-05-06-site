@@ -1,17 +1,14 @@
 <h2>This Site</h2>
+<p>You can see the code that builds this site on <a href="https://github.com/letsbelopez/davidlopez.dev">github</a></p>
 <p>
-  My goal for this site is to reflect my personal coding style. Below are some principles I have for
-  myself.
+  Some parts of this site are plain on purpose. It reflects my desire to only have what's needed. Some parts of the site will be dedicated to coding, and front end experiments. Some of those won't be 'plain.'
 </p>
 <h3>Long Life</h3>
 <p>
-  My goal with this website is that will last longer than me. I'm doing that by running a plain
-  Express server with plain text files. This site is dependent on few tools and no companies to
+  I'd like this site to last longer than I do. To do that the site needs to be dependent on few tools and no companies to
   operate or maintain anything.
 </p>
 <h3>Simplicity</h3>
 <p>
-  If you got to maintain a website, I might as well make it as easy as possible for myself. It's
-  easier for me to just update text files on my computer. It's also a pleasure to just have what is
-  needed.
+  If I have to maintain a website, I might as well make it as easy as possible for myself. When the site starts up, a JS script goes through some directories of plain text files and build the routes and puts the content in a Pug template. All I have to do to update the site is edit plain text files!
 </p>
