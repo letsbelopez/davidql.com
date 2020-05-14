@@ -1,15 +1,14 @@
 <h2>This Site</h2>
-<p>You can see the code that builds this site on <a href="https://github.com/letsbelopez/davidlopez.dev">github</a></p>
-<p>This site may look simple and not so special, but it's to me. Here's how I built it.</p>
+<p>You can see the code that builds this site on <a href="https://github.com/letsbelopez/davidlopez.dev">github</a>.</p>
+<p>
+  Most of this site is plain on purpose. It reflects my desire to only have what's needed. Some parts will be dedicated to coding experiments, which may not be as plain.
+</p>
+<h3>About the Site</h3>
 <ul>
   <li>Hosted on Digital Ocean. I set up an Ubuntu Virtual Machine and manage everything through SSH</li>
-  <li>Configuring Nginx with Let's Encrypt automated SSL/TSL cert renewal</li>
-  <li>App process management using PM2</li>
-  <li>Built a static site generator to compile my HTML</li>
+  <li>Configuring Nginx with Let's Encrypt automated SSL/TLS cert renewal</li>
+  <li>Built a static site generator to compile my HTML (that's the github link)</li>
 </ul>
-<p>
-  Some parts of this site are plain on purpose. It reflects my desire to only have what's needed. Some parts of the site will be dedicated to coding, and front end experiments. Some of those won't be as plain.
-</p>
 <h3>Long Life and Simplicity</h3>
 <p>
   I'd like this site to last longer than I do. To do that the site needs to be dependent on few tools, no companies to
