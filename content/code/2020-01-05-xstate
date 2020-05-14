@@ -1,49 +1,29 @@
-<h2>Sate Machines in JavaScript</h2>
+<h2>XState 101 - An Introduction to State Machines Using JavaScript</h2>
 <p>
-  I listen to a podcast called <a href="https://syntax.fm">syntax fm</a> sometimes. It's mostly
-  about web development. One of the hosts mentioned something about state machines and it sounded
-  interesting so I looked into it. I didn't think there was much information about using them in
-  software at the time, so I made a small tutorial series on the topic. I tried to make it so it's
-  applicable to State Machines in general, but I used a JavaScript library called
+  I didn't think there was good accessible examples using state machines in
+  software at the time, so I made a course to teach others how to use state machines in a JavaScript app.
+</p>
+<p>
+  The course is designed so it's applicable to state machines in general, but I used a JavaScript library called
   <a href="https://xstate.js.org">xstate</a> to implement the state machine in a react web
-  application. The good thing about xstate though is that it's framework and library agnostic, so
+  app. The good thing about xstate is that it's framework and library agnostic, so
   you can use it in any JavaScript app or website.
 </p>
 <p>
-  If you're interested in getting an intro to state machines, I think you'll find some value out of
-  it. So please enjoy.
+  If you're interested in getting an intro to state machines, I think you'll find value in
+  it. The first lesson is an overview of state machines and in the second and third lessons we build a state machine
+  with JavaScript. Please enjoy.
 </p>
 <p>
   You can also watch the videos on
-  <a
-    href="https://www.youtube.com/watch?v=HBJ-8YEw39E&list=PLNDp_PiLcZPECU8Brhl-EdwYdrKtMIWoX&index=1"
-    >YouTube</a
-  >.
+  <a href="https://www.youtube.com/watch?v=HBJ-8YEw39E&list=PLNDp_PiLcZPECU8Brhl-EdwYdrKtMIWoX&index=1">YouTube</a>.
 </p>
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube.com/embed/HBJ-8YEw39E"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/HBJ-8YEw39E" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube-nocookie.com/embed/dB1tGv2WGBI"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/dB1tGv2WGBI" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
-<iframe
-  width="560"
-  height="315"
-  src="https://www.youtube-nocookie.com/embed/LKYofPoOlaM"
-  frameborder="0"
-  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-  allowfullscreen
-></iframe>
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/LKYofPoOlaM" frameborder="0"
+  allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
