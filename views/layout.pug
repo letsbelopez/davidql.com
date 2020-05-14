@@ -1,7 +1,10 @@
 doctype html
 html(lang="en")
   head
-    title David Lopez Programmer
+    if pageTitle
+      title #{pageTitle} \ David Lopez
+    else
+      title David Lopez
     link(rel="stylesheet", href="/style.css")
     link( href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap", rel="stylesheet")
     meta(charset="UTF-8")

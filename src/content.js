@@ -32,6 +32,7 @@ exports.getContentData = function getContentData(basePath, files, result = [], d
         title,
         body,
         directory,
+        pageTitle: title.replace(/<[^>]+>/g, '') // strip out h2 tags for page title
       };
       result.push(route);
     }
