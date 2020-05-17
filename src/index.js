@@ -11,5 +11,3 @@ if (!fs.existsSync(config.outdir)) {
 
 contentController.createPages(data);
 contentController.createHomePage();
-
-
