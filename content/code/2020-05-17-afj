@@ -1,0 +1,142 @@
+<h2>Alergy Food Journal</h2>
+<p>Has your stomach ever hurt after eating something, but you couldn't figure out why?</p>
+<p>Maybe you thought you were sensitive to some food you ate, but you couldn't really pinpoint it or figure out what it
+  was that you ate that made you so sensitive.</p>
+<p>I made this app for you.</p>
+<h3>Here's how to use it.</h3>
+<p>Log What you eat and say whether your stomach hurt or not.</p>
+<p>Check the results to find out what foods have a positive and negative correlation to your stomach pain.</p>
+<form>
+  <h2>Journal Entry Form</h2>
+  <fieldset>
+    <legend>Add foods - one per input</legend>
+    <input type="text" class="food" />
+    <button class="delete" type="button">delete</button>
+  </fieldset>
+  <button id="add" type="button">Add more food inputs</button>
+  <label for="pain">Was there pain?
+    <input type="checkbox" id="pain">
+  </label>
+  <button type="button" id="submit">Save Entry</button>
+</form>
+
+<section id="correlations">
+  <h3>Food - Pain Correlations</h3>
+  <p>Here is where we will calculate the food and pain correlations based on your journal entries.</p>
+  <button id="calculate">Calculate</button>
+  <table>
+    <thead>
+      <tr><th>Food</th><th>Phi</th></tr>
+    </thead>
+    <tbody>
+    </tbody>
+  </table>
+</section>
+
+<template>
+  <input type="text" class="food" /><button class="delete" type="button">delete</button>
+</template>
+
+<script>
+  const submit = document.querySelector('#submit');
+  const add = document.querySelector('#add');
+  const calculateButton = document.querySelector('#calculate');
+  const template = document.querySelector('template').content;
+  const foodInputs = document.querySelector('fieldset');
+  const pain = document.querySelector('#pain');
+  const form = document.querySelector('form');
+  const correlations = document.querySelector('#correlations');
+  const tableBody = document.querySelector('tbody');
+
+  add.addEventListener('click', appendInput);
+  foodInputs.addEventListener('click', deleteFood);
+  submit.addEventListener('click', save);
+  calculateButton.addEventListener('click', calculate);
+  const journal = [
+    {
+      foods: ['pizza', 'eggs', 'peanuts', 'beer', 'wine'],
+      pain: false
+    },
+    {
+      foods: ['ice cream', 'eggs', 'peanuts', 'beer', 'wine'],
+      pain: true
+    }
+  ];
+
+  function addEntry(foods, pain) {
+    journal.push({ foods, pain });
+  }
+
+  function phi(table) {
+    const dividend = (table[3] * table[0] - table[2] * table[1]);
+    const divisor = Math.sqrt((table[2] + table[3]) *
+      (table[0] + table[1]) *
+      (table[1] + table[3]) *
+      (table[0] + table[2]));
+    return dividend / divisor;
+  }
+
+  function tableFor(food, journal) {
+    let table = [0, 0, 0, 0];
+    for (let entry of journal) {
+      let index = 0;
+      if (entry.foods.includes(food)) index += 1;
+      if (entry.pain) index += 2;
+      table[index] += 1;
+    }
+    return table;
+  }
+
+  function journalFoods(journal) {
+    let foods = [];
+    for (let entry of journal) {
+      for (let food of entry.foods) {
+        if (!foods.includes(food)) {
+          foods.push(food);
+        }
+      }
+    }
+    return foods;
+  }
+
+  function appendInput() {
+    foodInputs.appendChild(document.importNode(template, true));
+  }
+
+  function deleteFood(e) {
+    if (Array.from(e.target.classList).includes('delete')) {
+      e.target.previousElementSibling.remove();
+      e.target.remove();
+    }
+  }
+
+  function save() {
+    let foods = [];
+    let inputs = Array.from(document.querySelectorAll('.food'));
+    for (let input of inputs) {
+      foods.push(input.value);
+    }
+    addEntry(foods, pain.checked);
+    form.reset();
+  }
+
+  function calculate() {
+    for (let food of journalFoods(journal)) {
+      let num = phi(tableFor(food, journal));
+      appendRow(food, num);
+      console.log(`${food} :`, phi(tableFor(food, journal)));
+    }
+  }
+
+  function appendRow(food, phi) {
+    let tr = document.createElement('tr');
+    let foodCell = document.createElement('td');
+    let phiCell = document.createElement('td');
+    foodCell.textContent = food;
+    phiCell.textContent = phi;
+    tr.appendChild(foodCell);
+    tr.appendChild(phiCell);
+    tableBody.appendChild(tr);
+  }
+
+</script>
