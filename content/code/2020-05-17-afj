@@ -1,4 +1,4 @@
-<h2>Alergy Food Journal</h2>
+<h2>Allergy Food Journal</h2>
 <p>Has your stomach ever hurt after eating something, but you couldn't figure out why?</p>
 <p>Maybe you thought you were sensitive to some food you ate, but you couldn't really pinpoint it or figure out what it
   was that you ate that made you so sensitive.</p>
@@ -24,13 +24,22 @@
   <h3>Food - Pain Correlations</h3>
   <p>Here is where we will calculate the food and pain correlations based on your journal entries.</p>
   <button id="calculate">Calculate</button>
+  <button onclick="tableBody.innerHTML = '';">Clear Results</button>
   <table>
     <thead>
-      <tr><th>Food</th><th>Phi</th></tr>
+      <tr>
+        <th>Food</th>
+        <th>Phi Coefficient</th>
+      </tr>
     </thead>
     <tbody>
     </tbody>
   </table>
+</section>
+
+<section>
+  <h3>Journal</h3>
+  <pre><code>Your journal is empty. Create an entry.</code></pre>
 </section>
 
 <template>
@@ -47,24 +56,16 @@
   const form = document.querySelector('form');
   const correlations = document.querySelector('#correlations');
   const tableBody = document.querySelector('tbody');
-
+  const code = document.querySelector('code');
   add.addEventListener('click', appendInput);
   foodInputs.addEventListener('click', deleteFood);
   submit.addEventListener('click', save);
   calculateButton.addEventListener('click', calculate);
-  const journal = [
-    {
-      foods: ['pizza', 'eggs', 'peanuts', 'beer', 'wine'],
-      pain: false
-    },
-    {
-      foods: ['ice cream', 'eggs', 'peanuts', 'beer', 'wine'],
-      pain: true
-    }
-  ];
+  const journal = [];
 
   function addEntry(foods, pain) {
     journal.push({ foods, pain });
+    code.textContent = JSON.stringify(journal, null, 2);
   }
 
   function phi(table) {
@@ -121,6 +122,7 @@
   }
 
   function calculate() {
+    tableBody.innerHTML = '';
     for (let food of journalFoods(journal)) {
       let num = phi(tableFor(food, journal));
       appendRow(food, num);
@@ -138,5 +140,4 @@
     tr.appendChild(phiCell);
     tableBody.appendChild(tr);
   }
-
 </script>
