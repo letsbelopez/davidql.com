@@ -1,24 +1,32 @@
 <h2>Allergy Food Journal</h2>
-<p>Has your stomach ever hurt after eating something, but you couldn't figure out why?</p>
-<p>Maybe you thought you were sensitive to some food you ate, but you couldn't really pinpoint it or figure out what it
-  was that you ate that made you so sensitive.</p>
-<p>I made this app for you.</p>
-<h3>Here's how to use it.</h3>
-<p>Log What you eat and say whether your stomach hurt or not.</p>
-<p>Check the results to find out what foods have a positive and negative correlation to your stomach pain.</p>
-<form>
-  <h2>Journal Entry Form</h2>
-  <fieldset>
-    <legend>Add foods - one per input</legend>
-    <input type="text" class="food" />
-    <button class="delete" type="button">delete</button>
-  </fieldset>
-  <button id="add" type="button">Add more food inputs</button>
-  <label for="pain">Was there pain?
-    <input type="checkbox" id="pain">
-  </label>
-  <button type="button" id="submit">Save Entry</button>
-</form>
+<p>Has your stomach ever hurt after eating something but you couldn't figure out why?</p>
+
+<section>
+  <h3>Here's how to use it.</h3>
+  <p>Log what you eat and mark whether your stomach hurt or not. One way to do it is to log all everything you ate in a
+    day and mark if your stomach hurt or not.</p>
+  <p>When you log enough data, press calculate to find out what foods have a positive and negative correlation to your
+    stomach pain. Foods that are positively correlated to your pain, will have a value closer to 1. Foods that are
+    negatively correlated to your pain, will have a value closer to -1.</p>
+</section>
+
+<section>
+  <h3>Journal Entry Form</h3>
+  <form>
+    <fieldset>
+      <legend>Add foods - one per input</legend>
+      <div>
+        <input type="text" class="food" />
+        <button class="delete" type="button">delete</button>
+      </div>
+    </fieldset>
+    <button id="add" type="button">Add more food inputs</button>
+    <label for="pain">Was there pain?
+      <input type="checkbox" id="pain">
+    </label>
+    <button type="button" id="submit">Save Entry</button>
+  </form>
+</section>
 
 <section id="correlations">
   <h3>Food - Pain Correlations</h3>
@@ -38,13 +46,33 @@
 </section>
 
 <section>
-  <h3>Journal</h3>
+  <h3>Your Journal</h3>
   <pre><code>Your journal is empty. Create an entry.</code></pre>
 </section>
 
 <template>
-  <input type="text" class="food" /><button class="delete" type="button">delete</button>
+  <div>
+    <input type="text" class="food" /><button class="delete" type="button">delete</button>
+  </div>
 </template>
+
+<style>
+  fieldset {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  form > * + * {
+    margin-top: 1rem;
+  }
+</style>
 
 <script>
   const submit = document.querySelector('#submit');
