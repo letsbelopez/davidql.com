@@ -31,10 +31,19 @@ h1, h2, h3 {
 
 body {
   margin: 0 auto;
+  padding: 15px;
   max-width: 35rem;
   font-family: 'Karla', sans-serif;
 }
 
 section + section {
   margin-top: 4rem;
+}
+
+section.masthead h1 a {
+  color: #000;
+}
+
+a {
+  text-decoration: none;
 }

@@ -5,8 +5,8 @@
   "description": "My personal website. Made with NodeJS.",
   "main": "start.js",
   "scripts": {
-    "start": "node ./start.js",
-    "dev": "nodemon ./start.js --ignore public/",
+    "start": "NODE_ENV=production node ./start.js",
+    "dev": "NODE_ENV=dev nodemon ./start.js --ignore public/ -e js,pug,html",
     "build": "node ./src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

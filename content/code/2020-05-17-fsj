@@ -1,4 +1,4 @@
-<h2>Allergy Food Journal</h2>
+<h2>Food Sensitivity Journal</h2>
 <p>Has your stomach ever hurt after eating something but you couldn't figure out why?</p>
 
 <section>
@@ -47,7 +47,7 @@
 
 <section>
   <h3>Your Journal</h3>
-  <pre><code>Your journal is empty. Create an entry.</code></pre>
+  <pre><code>Journal is empty.</code></pre>
 </section>
 
 <template>
