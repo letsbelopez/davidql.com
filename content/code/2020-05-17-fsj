@@ -10,7 +10,7 @@
     day and mark if your stomach hurt or not.</p>
   <p>When you log enough data, press calculate to find out what foods have a positive and negative correlation to your
     stomach pain. The calculation won't work well if you only log one food. The more you log the better. If you didn't
-    log enough, you'll see a <code>NaN</code> as a calculation result.</p>
+    log enough, you'll see NaN as a calculation result.</p>
   <p>Foods that are positively correlated to your pain, will have a value closer to 1. Foods that are
     negatively correlated to your pain, will have a value closer to -1.</p>
 </section>
