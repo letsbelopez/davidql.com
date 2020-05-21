@@ -1,12 +1,17 @@
 <h2>Food Sensitivity Journal</h2>
+<p><strong>Disclaimer:</strong> This isn't a complete app. I was interested in finding a use for the <a
+    href="https://en.wikipedia.org/wiki/Phi_coefficient">Phi Coefficient</a>
+  equation when I thought of the idea for the Food Sensitivity Journal. This was built to prove the concept.</p>
 <p>Has your stomach ever hurt after eating something but you couldn't figure out why?</p>
 
 <section>
-  <h3>Here's how to use it.</h3>
-  <p>Log what you eat and mark whether your stomach hurt or not. One way to do it is to log all everything you ate in a
+  <h3>How to use it</h3>
+  <p>Log what you eat and mark whether your stomach hurt or not. One way to do it is to log everything you ate in a
     day and mark if your stomach hurt or not.</p>
   <p>When you log enough data, press calculate to find out what foods have a positive and negative correlation to your
-    stomach pain. Foods that are positively correlated to your pain, will have a value closer to 1. Foods that are
+    stomach pain. The calculation won't work well if you only log one food. The more you log the better. If you didn't
+    log enough, you'll see a <code>NaN</code> as a calculation result.</p>
+  <p>Foods that are positively correlated to your pain, will have a value closer to 1. Foods that are
     negatively correlated to your pain, will have a value closer to -1.</p>
 </section>
 
@@ -69,7 +74,7 @@
     align-items: flex-start;
   }
 
-  form > * + * {
+  form>*+* {
     margin-top: 1rem;
   }
 </style>
@@ -82,14 +87,14 @@
   const foodInputs = document.querySelector('fieldset');
   const pain = document.querySelector('#pain');
   const form = document.querySelector('form');
-  const correlations = document.querySelector('#correlations');
   const tableBody = document.querySelector('tbody');
   const code = document.querySelector('code');
+  const journal = [];
+
   add.addEventListener('click', appendInput);
   foodInputs.addEventListener('click', deleteFood);
   submit.addEventListener('click', save);
   calculateButton.addEventListener('click', calculate);
-  const journal = [];
 
   function addEntry(foods, pain) {
     journal.push({ foods, pain });
@@ -143,7 +148,9 @@
     let foods = [];
     let inputs = Array.from(form.querySelectorAll(`input[type='text']`));
     for (let input of inputs) {
-      foods.push(input.value);
+      if (input.value.trim() !== '') {
+        foods.push(input.value);
+      }
     }
     addEntry(foods, pain.checked);
     form.reset();
