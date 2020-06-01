@@ -91,12 +91,17 @@ sup {
 sub {
   bottom: -0.25em;
 }
+/* End Typography */
 
-ul {
+img {
+  max-width: 100%;
+}
+
+ul.delist {
   padding-left: 0;
 }
 
-li {
+ul.delist li, ol.delist li {
   list-style-type: none;
 }
 

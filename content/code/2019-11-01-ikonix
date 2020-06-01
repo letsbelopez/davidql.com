@@ -1,9 +1,35 @@
-<h2>Ikonix USA IVS Enterprise App</h2>
+<h2>Ikonix IVS</h2>
+
+<figure>
+  <img src="/ikonix.png" alt="ikonix dashboard">
+</figure>
+
+<h3>About this project</h3>
 <p>
-  One of Ikonix's businesses is electrical instrument calibration and testing. Their technicians have been using a Windows desktop app to record test data and generate calibration certificates for the past 20 years. The new UI was built by me using Angular 7. The full app upgrade is estimated to save Ikonix $450,000 every year because of time saved using the app and onboarding new technicians.
+  I was a contractor on this project with the Fresh Consulting backend team. The Ikonix IVS app is an Angular web
+  application connected to a .NET Core API
 </p>
+<p>
+  At this project I acted as the lead UI developer specialist acting as a bridge between design and frontend development
+  and with the backend team and frontend
+  development. The main challenge was to create a user friendly dashboard to manage decades of data and streamline user
+  workflows. This drastically improved the speed to complete user tasks and onboard new users. Ikonix estimated that the
+  new app will save $450,000 every year.
+</p>
+
+<h3>Technical sheet</h3>
+<p>Technologies I worked with on this project.</p>
 <ul>
-  <li>Client: Ikonix USA</li>
-  <li>Role: Lead Frontend Developer</li>
-  <li>Date: 2019</li>
+  <li>Angular 7</li>
+  <li>Okta SSO</li>
+  <li>Material UI</li>
+  <li>ng-select - one of the coolest select box libraries</li>
+  <li>JavaScript ES6</li>
+  <li>CSS3, SASS</li>
+  <li>HTML5 - semantic</li>
+  <li>RXJS</li>
+  <li>Docker containers</li>
 </ul>
+
+<h2>Resources</h2>
+<a href="https://www.ikonixusa.com/">Visit Ikonix's homepage</a>
