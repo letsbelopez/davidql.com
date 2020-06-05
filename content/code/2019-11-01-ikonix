@@ -21,9 +21,10 @@
 <p>Technologies I worked with on this project.</p>
 <ul>
   <li>Angular 7</li>
+  <li>Typescript</li>
   <li>Okta SSO</li>
-  <li>Material UI</li>
-  <li>ng-select - one of the coolest select box libraries</li>
+  <li>Angular Material UI</li>
+  <li><a href="https://github.com/ng-select/ng-select">ng-select</a> - one of the coolest select box libraries</li>
   <li>JavaScript ES6</li>
   <li>CSS3, SASS</li>
   <li>HTML5 - semantic</li>
@@ -31,5 +32,5 @@
   <li>Docker containers</li>
 </ul>
 
-<h2>Resources</h2>
+<h3>Resources</h3>
 <a href="https://www.ikonixusa.com/">Visit Ikonix's homepage</a>
