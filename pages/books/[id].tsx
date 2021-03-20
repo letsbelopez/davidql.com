@@ -9,8 +9,8 @@ export default function Book({ bookData }) {
       <Head>
         <title>{bookData.title}</title>
       </Head>
-      <h2>{bookData.title}</h2>
-      <div dangerouslySetInnerHTML={{__html: bookData.contentHtml}} />
+      <h2 className="text-3xl mt-14 mb-7 font-medium">{bookData.title}</h2>
+      <div className="markdown" dangerouslySetInnerHTML={{__html: bookData.contentHtml}} />
     </Layout>
   )
 }

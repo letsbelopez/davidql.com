@@ -1,0 +1,7 @@
+.markdown {
+  @apply max-w-prose text-xl space-y-7;
+}
+
+.markdown a {
+  @apply text-blue-600 hover:text-blue-800 duration-200;
+}

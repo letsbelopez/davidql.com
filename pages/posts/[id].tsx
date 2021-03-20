@@ -9,8 +9,8 @@ export default function Post({ postData }) {
       <Head>
         <title>{postData.title}</title>
       </Head>
-      <h2>{postData.title}</h2>
-      <div dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
+      <h2 className="text-3xl mt-14 mb-7 font-medium">{postData.title}</h2>
+      <div className="markdown" dangerouslySetInnerHTML={{__html: postData.contentHtml}} />
     </Layout>
   )
 }
